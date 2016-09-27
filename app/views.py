@@ -23,7 +23,7 @@ def results(subdomain):
 
     subdomain_dict = get_subdomain_dict()
 
-    form = SubdomainForm()
+    form = SubdomainForm(subdomain=subdomain)
     form.subdomain.choices = [(item, item) for item in sorted(subdomain_dict.keys())]
 
     if subdomain in subdomain_dict:
