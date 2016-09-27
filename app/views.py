@@ -28,10 +28,12 @@ def results(subdomain):
 
     if subdomain in subdomain_dict:
         results = [(subdomain, url) for url in subdomain_dict[subdomain]]
+        error = None
     else:
         results = None
+        error = 'No Results Found'
 
-    return render_template('index.html', form=form, results=results)
+    return render_template('index.html', form=form, results=results, error=error)
 
 
 def get_subdomain_dict():

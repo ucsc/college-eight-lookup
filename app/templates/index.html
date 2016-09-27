@@ -58,7 +58,8 @@
                 </tr>
                 {% endfor %}
             </table>
-        {% else %}
+        {% endif %}
+        {% if error %}
             <h1>No Results Found</h1>
         {% endif %}
     </div>
