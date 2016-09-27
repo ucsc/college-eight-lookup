@@ -25,6 +25,9 @@ def index():
     form.subdomain.choices = [(item, item) for item in sorted(subdomain_dict.keys())]
 
     if 'subdomain' in request.args:
-        return render_template('index.html', form=form, urls=subdomain_dict[request.args.get('subdomain')])
+        subdomain = request.args.get('subdomain')
+        results = [(subdomain, url) for url in subdomain_dict[subdomain]]
+
+        return render_template('index.html', form=form, results=results)
 
     return render_template('index.html', form=form)

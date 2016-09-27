@@ -11,6 +11,26 @@
             padding: 40px;
         }
 
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            height: 50px;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid;
+        }
+
+        tr:nth-child(even) {background-color: #f2f2f2}
+
     </style>
 
 </head>
@@ -25,12 +45,19 @@
             <input type="submit" value="Search">
         </form>
         <br>
-        {% if urls %}
-            <ul>
-                {% for url in urls %}
-                    <li>{{ url }}</li>
+        {% if results %}
+            <table>
+                <tr>
+                    <th>Site</th>
+                    <th>File Path</th>
+                </tr>
+                {% for subdomain, url in results %}
+                <tr>
+                    <td>{{ subdomain }}</td>
+                    <td>{{ url }}</td>
+                </tr>
                 {% endfor %}
-            </ul>
+            </table>
         {% endif %}
     </div>
 </body>
