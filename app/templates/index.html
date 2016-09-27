@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>results</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <style>
+
+        body {
+            padding: 40px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <a href="/">
+            <img width='auto' height='auto' id='logo' src='http://www.ucsc.edu/identity/images/ucsc-stack.jpg'/>
+        </a> <br>
+        Use the select box to find your WCMS site. If you don't see your site in the select box, the phrase "College Eight" does not appear on your site. <br>
+        <form action="" method="get" name="get_url">
+            {{ form.subdomain() }}
+            <input type="submit" value="Search">
+        </form>
+        <br>
+        {% if urls %}
+            <ul>
+                {% for url in urls %}
+                    <li>{{ url }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
