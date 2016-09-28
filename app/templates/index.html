@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>results</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
+    <link href="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css" rel="stylesheet">
 
     <style>
 
@@ -41,7 +44,7 @@
         </a> <br>
         Use the select box to find your WCMS site. If you don't see your site in the select box, the phrase "College Eight" does not appear on your site. <br>
         <form action="/" method="get" name="get_url">
-            {{ form.subdomain() }}
+            {{ form.subdomain(id="editable-select", placeholder="Enter your subdomain") }}
             <input type="submit" value="Search">
         </form>
         <br>
@@ -68,6 +71,9 @@
     </div>
 
     <script>
+
+        $('#editable-select').editableSelect({ effects: 'default' });
+
         $(document).ready(function () {
 
             function exportTableToCSV($table, filename) {

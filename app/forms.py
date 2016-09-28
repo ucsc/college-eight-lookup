@@ -4,4 +4,4 @@ from wtforms.validators import DataRequired
 
 
 class SubdomainForm(Form):
-    subdomain = SelectField(u'Subdomain', validators=[DataRequired()])
+    subdomain = SelectField(u'Subdomain', validators=[DataRequired()], default='')
