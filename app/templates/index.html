@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>results</title>
+    <title>College Eight Lookup</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
@@ -59,7 +59,7 @@
                     {% for subdomain, url in results %}
                     <tr>
                         <td>{{ subdomain }}</td>
-                        <td>{{ url }}</td>
+                        <td><a href="http://{{ subdomain }}.ucsc.edu/{{ url }}">{{ url }}</a></td>
                     </tr>
                     {% endfor %}
                 </table>
