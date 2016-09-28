@@ -13,6 +13,12 @@ In the college-eight-lookup directory
     . flask/bin/activate
     pip install -r requirements.txt
 
+#### to run
+    chmod +x run.py
+    ./run.py
+or
+
+    python run.py
 
 ##### to quit the virtualenv
     deactivate
