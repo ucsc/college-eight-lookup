@@ -21,6 +21,10 @@
             margin: 2em auto;
         }
 
+        .row {
+            margin: 1.5em 0;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -40,6 +44,12 @@
         }
         select {
             width: 28em;
+        }
+
+        h1 {
+            padding-top: .3em;
+            border-top: 1px solid #999;
+            margin: 1.5em 0 .1em;
         }
 
         p {
@@ -107,7 +117,8 @@
             </div>
         {% endif %}
         {% if error %}
-            <h1>No Results Found</h1>
+            <h1>No results found for your subdomain</h1>
+            <p>You are free to go. :-) Thank you for taking the time to help us transition from "College Eight" to "Rachel Carson College."</p>
         {% endif %}
         </div>
     </div>
