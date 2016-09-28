@@ -10,7 +10,15 @@
     <style>
 
         body {
-            padding: 40px;
+            font-family: Helvetica, Arial;
+            line-height: 1.4;
+            font-size: 16px;
+            padding: 1em;
+        }
+
+        .container {
+            max-width: 58em;
+            margin: 2em auto;
         }
 
         table {
@@ -19,19 +27,45 @@
         }
 
         th {
-            height: 50px;
+            height: 2em;
             text-align: left;
         }
 
         th, td {
-            padding: 10px;
+            padding: .5em .25em;
         }
 
         table, th, td {
             border: 1px solid;
         }
         select {
-            40px;
+            width: 28em;
+        }
+
+        p {
+            max-width: 38em;
+        }
+
+        button {
+            font-size: .8em;
+            padding: .5em 1em;
+            background-color: #419BF9;
+            color: #fff;
+            cursor: pointer;
+            border: 0;
+            display: inline-block;
+            margin-top: .5em;
+        }
+
+        button:hover,
+        button:active {
+            background-color: #1271E1;
+        }
+
+        #logo {
+            display: block;
+            width: 220px;
+            height: auto;
         }
 
         tr:nth-child(even) {background-color: #f2f2f2}
@@ -40,18 +74,23 @@
 
 </head>
 <body>
-    <div>
-        <a href="/">
-            <img width='auto' height='auto' id='logo' src='http://www.ucsc.edu/identity/images/ucsc-stack.jpg'/>
-        </a> <br>
-        Use the select box to find your WCMS site. If you don't see your site in the select box, the phrase "College Eight" does not appear on your site. <br>
-        <form action="/" method="get" name="get_url">
-            {{ form.subdomain(id="editable-select", placeholder="Enter your subdomain") }}
-            <input type="submit" value="Search">
-        </form>
-        <br>
+    <div class="container">
+        
+        <div class="row">
+            <a href="/"><img id='logo' src='http://www.ucsc.edu/identity/images/ucsc-stack.jpg'/></a>
+        
+            <p>Use the select box to find your WCMS site domain. If you don't see your site in the select box, the phrase "College Eight" does not appear on your site.</p>      
+        </div>
+
+        <div class="row">
+            <form action="/" method="get" name="get_url">
+                {{ form.subdomain(id="editable-select", placeholder="Enter your subdomain") }}
+                <button>Lookup this domain</button>
+            </form>
+        </div>
         {% if results %}
-            <a href="#" class="export">Download CSV</a>
+        <div class="row">
+            <p><a href="#" class="export">Download CSV</a></p>
             <div id="dvData">
                 <table>
                     <tr>
@@ -70,6 +109,7 @@
         {% if error %}
             <h1>No Results Found</h1>
         {% endif %}
+        </div>
     </div>
 
     <script>
